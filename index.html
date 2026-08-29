@@ -104,22 +104,25 @@
 <main id="topo">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <span class="hero-ring"></span>
     <span class="hero-ring small"></span>
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="rule"></span>Movimento · Propósito · Acolhimento</div>
-        <h1>Cuidado completo,<br><em>no seu ritmo.</em></h1>
-        <p class="lede">Um estúdio de bem-estar no Jardim Oceania feito para você cuidar do corpo, aliviar tensões e cultivar presença com atenção personalizada.</p>
-        <div class="cta-row">
+        <div class="eyebrow entrance" style="--d:0"><span class="rule"></span>Movimento · Propósito · Acolhimento</div>
+        <h1 class="hero-title">
+          <span class="line"><span class="line-inner">Cuidado completo,</span></span>
+          <span class="line"><span class="line-inner"><em>no seu ritmo.</em></span></span>
+        </h1>
+        <p class="lede entrance" style="--d:1">Um estúdio de bem-estar no Jardim Oceania feito para você cuidar do corpo, aliviar tensões e cultivar presença com atenção personalizada.</p>
+        <div class="cta-row entrance" style="--d:2">
           <a class="btn btn-primary" href="https://wa.me/5583999313725?text=Ol%C3%A1%2C%20vi%20o%20site%20do%20Espa%C3%A7o%20Ser%20Bem%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental." target="_blank" rel="noopener">
             Agendar aula experimental
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="btn-ghost" href="#servicos">Conheça os serviços ↓</a>
         </div>
-        <div class="hero-badges">
+        <div class="hero-badges entrance" style="--d:3">
           <div class="hero-locate">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-7.58 7-13A7 7 0 0 0 5 9c0 5.42 7 13 7 13Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
             Jardim Oceania · João Pessoa
@@ -128,14 +131,14 @@
           <span class="hero-highlight">Próximo à praia</span>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-blob"></div>
-        <div class="hero-mark">
+      <div class="hero-visual entrance" style="--d:1">
+        <div class="hero-blob" id="heroBlob"></div>
+        <div class="hero-mark" id="heroMark">
           <img src="assets/logo.jpg" alt="Espaço Ser Bem — Logomarca">
           <span class="caption">um lugar para você</span>
         </div>
-        <div class="hero-chip c1"><span class="dot"></span>Acompanhamento individual</div>
-        <div class="hero-chip c2"><span class="dot"></span>Ambiente calmo e acolhedor</div>
+        <div class="hero-chip c1" id="heroChip1"><span class="dot"></span>Acompanhamento individual</div>
+        <div class="hero-chip c2" id="heroChip2"><span class="dot"></span>Ambiente calmo e acolhedor</div>
       </div>
     </div>
   </section>
