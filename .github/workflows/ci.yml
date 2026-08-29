@@ -1,0 +1,46 @@
+name: CI
+
+# Gate mecânico em toda PR e push na branch padrão. É o que permite item
+# determinístico do QA.md graduar para automação — sem CI, todo check fica
+# manual para sempre.
+#
+# ATENÇÃO: os passos comentados abaixo são candidatos, não promessas. Ative um
+# de cada vez, e só DEPOIS de rodá-lo localmente a partir de estado limpo
+# (apague .next/, dist/, cache de tipos). Passo que nunca rodou limpo é
+# alegação, não gate — e CI vermelho no primeiro run treina todo mundo a
+# ignorar CI.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm install
+
+      # - name: Lint
+      #   run: npm run lint
+      # - name: Testes
+      #   run: npm run test
+      # - name: Build
+      #   run: npm run build
+
+      # Type-check roda DEPOIS do build em projeto Next: os tipos globais são
+      # gerados em .next/types durante o build. Antes dele, falha em runner limpo.
+      # - name: Type-check
+      #   run: npx tsc --noEmit
